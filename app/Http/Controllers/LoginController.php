@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    public function index(){
+        return view('auth.login');
+    }
+
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
@@ -16,7 +20,7 @@ class LoginController extends Controller
         
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
-            return redirect()->route('post');
+            return redirect()->intended('post');
         }
 
         return back()->with('warning', 'Credenenciales invalidas de inicio de sesion');

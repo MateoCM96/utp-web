@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +26,8 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::middleware(['auth', 'auth.session'])->group(function() {
-    Route::post('/post', [PostController::class, 'index'])->name('post');
+Route::middleware(['auth', 'auth.session'])->group(function () {
+    Route::get('/post', [PostController::class, 'index'])->name('post');
     Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 });
 

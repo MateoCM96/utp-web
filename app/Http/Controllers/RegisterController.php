@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 
-use App\Http\Requests\Auth\RegisterRequest;
+use Illuminate\Support\Str;
 use Facades\App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use  Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\Auth\RegisterRequest;
 
 
 class RegisterController extends Controller

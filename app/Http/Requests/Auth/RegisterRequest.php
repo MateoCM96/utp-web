@@ -25,10 +25,10 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:55',
-            'username' => 'required|max:55|unique:users',
-            'email' => 'required|email|max:55|unique:users',
-            'password' => ['required,confirmed,min:8', Password::defaults()]
+            'name' => 'required|max:50',
+            'username' => 'required|unique:users',
+            'email' => 'required|unique:users',
+            'password' => ['required', 'confirmed', Password::defaults()],
         ];
     }
 

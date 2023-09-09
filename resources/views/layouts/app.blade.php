@@ -16,24 +16,19 @@
                 </h1>
                 <nav class="flex gap-2 items-center">
                     @if (Route::has('login') && Auth::check())
-                    <a class="font-bold text-gray-600 text-sm" href="#"></a>
-                        <form action="{{route(logout)}}" method="post">
+                    <a class="font-bold text-gray-600 text-sm" href="#">
+                        Hola, {{ auth()->user()->username }}
+                    </a>
+                        <form action="{{route('logout')}}" method="post">
                         @csrf
                             <button type="submit" class="font bold uppercase text-gray-600 test-sm">
                                 Cerrar Sesion
                             </button
                         </form>
                     @elseif(Route::has('login') && !Auth::check())
-                        <a class="font bold uppercase text-gray-600 test-sm" href="/login">
-                            Login</a>
-                        <a class="font bold uppercase text-gray-600 test-sm" href="/register">
-                            Register</a>
-                    @endif              
-                
-                    <a class="font bold uppercase text-gray-600 test-sm" href="/login">
-                        Login</a>
-                    <a class="font bold uppercase text-gray-600 test-sm" href="/register">
-                        Register</a>
+                        <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('login') }}">Login</a>
+                        <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">Regístrate</a>
+                    @endif               
                 </nav>
             </div>
         </header>

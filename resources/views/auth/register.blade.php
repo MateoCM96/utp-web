@@ -15,12 +15,11 @@
         </h2>
         <hr class="mb-5">
 
-        <form action="/register" method="POST">
+        <form action="{{ route('register') }}" method="POST">
             @csrf 
             <div class="mb-5"> 
                 <label for="name" class="mb-2:block uppercase text-gray-500 font-bold">
-                    Nombre Completo
-                   
+                    Nombre Completo        
                 </label>
                 <input
                     id="name"
@@ -46,9 +45,7 @@
                     name="username"
                     type="text" 
                     placeholder="tu nombre"
-                    class="border p-3 w-full rounded-lg @error('username')
-                    border-red-500
-                    @enderror"    
+                    class="border p-3 w-full rounded-lg @error('username') border-red-500 @enderror"    
                 
                 >
                 @error('username')

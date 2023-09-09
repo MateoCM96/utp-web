@@ -15,10 +15,13 @@
         </h2>
         <hr class="mb-5">
 
-        <form action="/login" method="POST">
+        <form action="{{ route('login') }}" method="POST">
             @csrf
-            if(ssession('warning'))
-            <p class="bg-red-500 text-white my-2 rounded-lg text-center"></p>
+            @if(session('warning'))
+            <p class="bg-red-500 text-white my-2 rounded-lg p-2 text-center">
+                {{session('warning')}}
+            </p>
+            @endif
             <div class="mb-5"> 
                 <label for="email" class="mb-2:block uppercase text-gray-500 font-bold">
                     Correo electronico      
