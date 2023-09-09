@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-    Página principal
+    UTP SOCIAL
 @endsection
 
 @section('contenido')
