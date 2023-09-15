@@ -61,10 +61,9 @@
                 value="Login"
                 class="bg-sky-600 hover:bg-green-600 cursor-pointer uppercase w-full p-3 text-white rounded-lg:font-bold"
             >
-
         </form>
     </div>
-</div>
+</div> 
 </div>
 <div class="md:flex md:justify-center md:items-center mt-10">
   <div class="md:w-4/12 bg-white p-6 rounden-lg shadow-2xl">

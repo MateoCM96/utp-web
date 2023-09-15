@@ -30,7 +30,7 @@
                         border-red-500
                         @enderror"         
                     
-                type="text"
+        
                 >
                 @error('name')
                     <p class="bg-red-500 text-white my-2 rounded-lg p-2 text-center" >{{$message}}</p>
