@@ -5,7 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +28,11 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::middleware(['auth', 'auth.session'])->group(function () {
     Route::get('/{user:username}', [PostController::class, 'index'])->name('post');
+    
+    Route::get('/user',[UserController::class, 'index'])->name('user');
+    Route::post('/user',[UserController::class, 'store']);
+
     Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
+       
 });
 

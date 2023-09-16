@@ -20,7 +20,7 @@
                     </p>
                     @auth
                         @if ($user->id === auth()->user()->id)
-                            <button class="mt-5 block w-full text-gray-800 text-sm hover:bg-gray-300 bg-gray-200 py-2 px-4 rounded-lg font-semibold cursor-pointer" type="submit">Editar perfil</button>
+                            <a class="mt-5 block w-full text-gray-800 text-sm hover:bg-gray-300 bg-gray-200 py-2 px-4 rounded-lg font-semibold cursor-pointer" href="">Editar Perfil</a>
                         @else
                             <button class="mt-5 text-white text-sm hover:bg-sky-700 bg-sky-500 py-2 px-4 rounded-lg font-semibold cursor-pointer" type="submit">Seguir</button>
                         @endif
@@ -42,7 +42,7 @@
                         <div class="px-2 text-center sm:text-start hidden sm:block">
                             @auth
                                 @if ($user->id === auth()->user()->id)
-                                    <button class=" text-gray-800 text-sm hover:bg-gray-300 bg-gray-200 py-2 px-4 rounded-lg font-semibold cursor-pointer" type="submit">Editar perfil</button>
+                                    <a class=" text-gray-800 text-sm hover:bg-gray-300 bg-gray-200 py-2 px-4 rounded-lg font-semibold cursor-pointer" href="/user">Editar perfil</a>
                                 @else
                                     <button class="text-white text-sm hover:bg-sky-700 bg-sky-500 py-2 px-4 rounded-lg font-semibold cursor-pointer" type="submit">Seguir</button>
                                 @endif

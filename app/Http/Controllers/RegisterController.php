@@ -33,8 +33,7 @@ class RegisterController extends Controller
             Auth::attempt($credentials);
             $request->session()->regenerate();
 
-            return redirect()->route('post');
-             
-            
+            return redirect()->route('post', $request->username);
+                        
         }
 }
