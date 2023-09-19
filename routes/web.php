@@ -29,8 +29,8 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::middleware(['auth', 'auth.session'])->group(function () {
     Route::get('/{user:username}', [PostController::class, 'index'])->name('post');
     
-    Route::get('/user',[UserController::class, 'index'])->name('user');
-    Route::post('/user',[UserController::class, 'store']);
+    Route::get('/user',[UserController::class, 'index'])->name('user'); // Se usa para mostrar la vista de editar perfil
+    Route::post('/user',[UserController::class, 'store']); // Se usa para guardar los cambios del perfil, se usa el facade para llamar al metodo saveOrUpdate
 
     Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
        

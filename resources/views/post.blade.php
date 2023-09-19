@@ -19,7 +19,7 @@
                         </svg>
                     </p>
                     @auth
-                        @if ($user->id === auth()->user()->id)
+                        @if ($user->id === auth()->user()->id) <!-- Si el usuario es el mismo que el que está logueado -->
                             <a class="mt-5 block w-full text-gray-800 text-sm hover:bg-gray-300 bg-gray-200 py-2 px-4 rounded-lg font-semibold cursor-pointer" href="">Editar Perfil</a>
                         @else
                             <button class="mt-5 text-white text-sm hover:bg-sky-700 bg-sky-500 py-2 px-4 rounded-lg font-semibold cursor-pointer" type="submit">Seguir</button>

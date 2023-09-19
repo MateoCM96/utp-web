@@ -25,7 +25,7 @@ class LoginRequest extends FormRequest
     {
         return [
             'name' => 'required|max:50',
-            'username' => 'required|unique:users,username'
+            'username' => 'required|unique:users,username' //unique:users,username se usa para que el username sea unico en la tabla users
         ];
     }
 

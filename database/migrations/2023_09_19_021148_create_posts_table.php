@@ -13,8 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('image')->nullable()->after('password'); 
+        Schema::create('posts', function (Blueprint $table) {
+            $table->id();
+            $table->integer('user_id');
+            $table->string('photo');
+            $table->text('description');
+            $table->timestamps(); //timestamp is a date and time
         });
     }
 
@@ -25,8 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('posts');
     }
 };

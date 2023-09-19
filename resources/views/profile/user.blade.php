@@ -16,7 +16,7 @@
 
         <form action="{{ route('user') }}" method="POST">
             @csrf
-            <input type="hidden" name="id" value="{{auth()->user()->id }}">
+            <input type="hidden" name="id" value="{{auth()->user()->id }}">  <!-- //Agregamos el id del usuario para que no se pierda al momento de actualizar -->
             @if(session('warning'))
             <p class="bg-red-500 text-white my-2 rounded-lg p-2 text-center">
                 {{session('warning')}}

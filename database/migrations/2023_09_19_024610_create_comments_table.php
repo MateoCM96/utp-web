@@ -13,8 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('image')->nullable()->after('password'); 
+        Schema::create('comments', function (Blueprint $table) {
+            $table->id();
+            $table->integer('user_id'); //user who made the comment
+            $table->integer('post_id'); //post that the comment is on
+            $table->text('content'); //the comment itself
+            $table->timestamps();    
         });
     }
 
@@ -25,8 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('comments');
     }
 };
