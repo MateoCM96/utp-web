@@ -25,33 +25,11 @@
     <!--Tabs content-->
     <div class="mb-6">
         <x-public />
-        <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
-            id="tabs-saved" role="tabpanel" aria-labelledby="tabs-saved-tab">
-            <div class=" sm:justify-between sm:flex">
-                <p class=" text-center text-xs font-semibold text-gray-500 mt-5">Solo tú puedes ver lo que guardaste
-                </p>
-                <a href="#" class="text-sky-700 cursor-pointer hidden sm:block">+ Nueva colección</a>
-            </div>
-            <div class="mt-20">
-                <img class="m-auto justify-center items-center text-center" src="{{ asset('img/saved.png') }}"
-                    alt="image saved">
-            </div>
-            <div class="text-center">
-                <h1 class="text-4xl font-black font-sans">Guardar</h1>
-                <p class="m-3 text-sm text-gray-800">Guarda fotos y videos que quieras volver a ver. Nadie recibirá una
-                    notificación y solo tú podrás ver lo que guardaste.</p>
-            </div>
-        </div>
-        <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
-            id="tabs-tagged" role="tabpanel" aria-labelledby="tabs-tagged">
-            <div class="mt-20">
-                <img class="m-auto text-center" src="{{ asset('img/target.png') }}" alt="image saved">
-            </div>
-            <div class="mt-5">
-                <h1 class="text-2xl font-black font-sans text-center">Fotos en las que apareces</h1>
-                <p class="m-3 text-sm text-gray-800 text-center">Cuando las personas te etiqueten en fotos, aparecerán
-                    aquí.</p>
-            </div>
-        </div>
+        <x-tabs tabName="tabs-saved" tabName1="tabs-saved-tab" >
+            <x-tabs-content src="{{asset('img/saved.png')}}" alt="image saved" text="Guardar" text2="Guarda fotos y videos que quieras volver a ver. Nadie recibirá una notificación y solo tú podrás ver lo que guardaste." />
+        </x-tabs>   
+        <x-tabs tabName="tabs-tagged" tabName1="tabs-tagged" >
+            <x-tabs-content src="{{asset('img/target.png')}}" alt="image saved" text="Fotos en las que apareces" text2="Cuando las personas te etiqueten en fotos, aparecerán aquí." />
+        </x-tabs> 
     </div>
 </x-layout>
