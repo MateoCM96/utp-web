@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Auth;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\Password;
 
 class LoginRequest extends FormRequest
 {
@@ -25,8 +26,17 @@ class LoginRequest extends FormRequest
     {
         return [
             'name' => 'required|max:50',
-            'username' => 'required|unique:users,username' //unique:users,username se usa para que el username sea unico en la tabla users
+            'username' => 'required|unique:users,username,'.auth()->user()->id,
         ];
     }
 
+    public function messages()
+    {
+        return[
+            'name.required' => 'El nombre es obligatorio.',
+            'name.max' => 'Supero la máxima cantidad de caracteres.',
+            'username.required' => 'El username es obligatorio.',
+            'username.unique' => 'El username ya esta en uso.',
+        ];
+    }
 }

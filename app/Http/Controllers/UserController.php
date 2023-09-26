@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\LoginRequest;
-use Illuminate\Http\Request;
 use Facades\App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\Auth\LoginRequest;
 
 class UserController extends Controller
 {
-    public function index(){
-        return view('profile.user'); // Se usa para mostrar la vista de editar perfil, esta dentro de la carpeta profile
-    } // Se usa para mostrar la vista de editar perfil
+    public function index()
+    {
+        return view('profile.index');
+    }
 
-    public function store(LoginRequest $request){ //LoginRequest se usa para validar los datos del formulario
-       
-        User::saveOrUpdate($request->all());
-        return redirect()->route('post',$request->username); //para redireccionar a la vista de perfil despues de guardar los cambios
-    } // Se usa para guardar los cambios del perfil, se usa el facade para llamar al metodo saveOrUpdate     
+    public function store(LoginRequest $request)
+    {
+        $user = User::saveOrUpdate($request->all());
+        return redirect()->route('post', ['user' => $user]);
+    }
 }

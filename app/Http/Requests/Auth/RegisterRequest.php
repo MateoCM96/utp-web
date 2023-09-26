@@ -34,16 +34,16 @@ class RegisterRequest extends FormRequest
 
     public function messages()
     {
-        return [
-            'name.required' => 'Nombre es requerido',
-            'name.max' => 'Nombre no puede ser mayor a 55 caracteres',
-            'username.required' => 'nombre de usuario es requerido',
-            'username.unique' => 'Nombre de usuario ya existe',
-            'email.required' => 'Email es requerido',
-            'email.unique' => 'Email ya existe',
-            'password.required' => 'contraseña es requerido',
-            'password.confirmed' => 'contraseña no coincide',
-            'password.min' => 'contraseña debe tener al menos 8 caracteres'
+        return[
+            'name.required' => 'El nombre es obligatorio.',
+            'name.max' => 'Supero la máxima cantidad de caracteres.',
+            'username.required' => 'El username es obligatorio.',
+            'username.unique' => 'El username ya esta en uso.',
+            'email.required' => 'El email es obligatorio.',
+            'email.unique' => 'El email ya esta en uso.',
+            'password.required' => 'La contraseña es obligatoria.',
+            'password.confirmed' => 'La confirmación de la contraseña no coincide.',
+            'password.min' => 'La contraseña debe tener al menos 8 caracteres.'
         ];
     }
 }
