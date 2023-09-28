@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Facades\App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Auth\LoginRequest;
-
+use Facades\App\Models\User; 
 class UserController extends Controller
 {
     public function index()

@@ -31,5 +31,6 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
     Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
     Route::get('/edit-profile', [UserController::class, 'index'])->name('profile.index');
     Route::post('/edit-profile', [UserController::class, 'store'])->name('profile.store');
+    Route::post('/store', [PostController::class, 'store'])->name('store');
     Route::get('/{user:username}', [PostController::class, 'index'])->name('post');
 });
