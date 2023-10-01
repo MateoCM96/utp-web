@@ -34,7 +34,7 @@ class Post extends Model
         $nameFile = Str::uuid().".". $file->extension();
         $image = Image::make($file);
         $image->fit(1000, 1000);
-        $image->contrast(65);
+        //$image->contrast(65);
         $imagenPath = public_path('uploads').'/'.$nameFile;
         $image->save($imagenPath);
         return $image;
