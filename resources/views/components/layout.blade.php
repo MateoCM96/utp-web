@@ -43,9 +43,7 @@
                 <h2 class="font-black text-center text-3xl sm:mb-10 mt-5"> {{ $title }} </h2>
             @endisset
             {{ $slot }}
-            @if (Auth::check())
-                <x-div-modal/>
-            @endif
+            
         </main>
         <footer class="text-sm text-center sm:p-5 text-gray-500 font-bold uppercase">
             @if (Auth::check())
