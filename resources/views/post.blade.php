@@ -59,9 +59,4 @@
             <x-div-nothing-to-show src="{{ asset('img/target.png') }}" alt="image saved" textH1="Fotos en las que apareces" textP="Cuando las personas te etiqueten en fotos, aparecerán aquí."/>
         </x-tab-content>
     </div>
-    @if (Auth::check())
-            <x-div-modal id="interestModal" title="Crea una nueva publicación">
-                <x-div-modal-header title="Crea una nueva publicación" />
-                <x-div-modal-body />    
-            @endif
 </x-layout>
