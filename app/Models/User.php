@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Facades\App\Models\Post;
+use Illuminate\Database\Eloquent\Model;
+use App\Traits\Database;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
-use App\Traits\Database;
-
 
 class User extends Authenticatable
 {
@@ -52,10 +53,8 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Post');
     }
 
-    public function saveOrUpdate(array $data) 
-    {  
+    public function saveOrUpdate(array $data)
+    {
         return $this->persist(User::class, $data);
     }
 }
-
-

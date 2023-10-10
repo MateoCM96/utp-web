@@ -35,4 +35,4 @@ class LoginController extends Controller
  
         return back()->with('warning', 'Las credenciales proporcionadas no coinciden con nuestros registros.');
     }
-}              
+}

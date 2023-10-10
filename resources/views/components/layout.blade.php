@@ -8,7 +8,8 @@
         <title>@isset($titlePage) {{ $titlePage }} @endisset</title>
         @vite('resources/css/app.css')
         @vite('resources/js/app.js')
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        @vite('resources/js/modals.js')
+        
     </head>
     <body class="bg-white h-screen flex flex-col">
         <header class="sm:p-5 px-4 border-b bg-white shadow">
@@ -44,7 +45,9 @@
             @endisset
             {{ $slot }}
             @if (Auth::check())
-                <x-div-modal/>
+                <x-div-modal id="interestModal" classButton="closeModal">
+                    <x-content-modal-post-store/>
+                </x-div-modal>
             @endif
         </main>
         <footer class="text-sm text-center sm:p-5 text-gray-500 font-bold uppercase">

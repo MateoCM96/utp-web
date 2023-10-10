@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/crop-image', [ApiController::class, 'cropImage']);
+Route::get('/render-conmponent-post-show', [ApiController::class, 'render']);

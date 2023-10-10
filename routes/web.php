@@ -35,3 +35,4 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
     Route::post('/crop-image', [PostController::class, 'cropImage']);
     Route::get('/{user:username}', [PostController::class, 'index'])->name('post');
 });
+
