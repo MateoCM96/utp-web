@@ -39,7 +39,7 @@
             @else
                 @if ($user->id == auth()->user()->id)
                     <x-div-nothing-to-show src="{{ asset('img/publication.png') }}" alt="image saved" textH1="Comparte fotos" textP="Cuando compartas fotos, aparecerán en tu perfil.">
-                        <a class="openModal text-sm text-sky-600 hover:text-sky-950 font-semibold cursor-pointer" type="button">
+                        <a class="openModalStorePost text-sm text-sky-600 hover:text-sky-950 font-semibold cursor-pointer" type="button">
                             Comparte tu primera foto
                         </a>
                     </x-div-nothing-to-show>
@@ -58,7 +58,13 @@
     </div>
     @if (Auth::check())
         <x-div-modal id="showPost" classButton="closeModalshowPost">
-            Este modal es el de la publicación
+            <x-content-modal-post-show :user="$user"/>
+        </x-div-modal>
+        <x-div-modal id="options-post" idBackDropModal="backdrop-modal">
+            <div class="mt-6 flex items-center justify-end gap-x-6">
+                <button type="button" id="cancelButton" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
+                <button type="submit" id="deleteButton" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Eliminar</button>
+            </div>
         </x-div-modal>
     @endif
 </x-layout>

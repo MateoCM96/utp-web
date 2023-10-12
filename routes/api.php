@@ -1,6 +1,8 @@
 <?php
 
+use Facades\App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
 
@@ -20,4 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/crop-image', [ApiController::class, 'cropImage']);
-Route::get('/render-conmponent-post-show', [ApiController::class, 'render']);
+Route::DELETE('/destroy-post', [ApiController::class, 'destroyPost']);
+Route::get('/render-component-post-show', [ApiController::class, 'render']);
