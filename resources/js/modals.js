@@ -16,9 +16,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 toggleModal(optionPost, "invisible", false);
                 toggleModal(optionPost, "z-10", false);
                 toggleModal(optionPost, "z-20", true);
-                const post_id = optionPost.getAttribute("data-post-id");
-                deletePost(post_id);
             }
+        }
+    });
+
+    optionPost.addEventListener("click", function (event) {
+        if (event.target == document.getElementById("delete-post")) {
+            const post_id = optionPost.getAttribute("data-post-id");
+            deletePost(post_id);
+        }
+    });
+
+    optionPost.addEventListener("click", function (event) {
+        if (event.target == document.getElementById("cancel-delete")) {
+            toggleModal(optionPost, "invisible", true);
         }
     });
 

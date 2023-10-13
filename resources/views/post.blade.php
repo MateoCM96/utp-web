@@ -62,8 +62,9 @@
         </x-div-modal>
         <x-div-modal id="options-post" idBackDropModal="backdrop-modal">
             <div class="mt-6 flex items-center justify-end gap-x-6">
-                <button type="button" id="cancelButton" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
-                <button type="submit" id="deleteButton" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Eliminar</button>
+                <button type="button" id="cancel-delete" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
+                <button type="submit" id="delete-post" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Eliminar</button>
+             
             </div>
         </x-div-modal>
     @endif
